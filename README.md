@@ -1,7 +1,3 @@
-Here’s a **single README.md** for your full project (backend + frontend) in the new root-level structure.
-It’s hackathon-friendly, clearly explains what Devpathy does, and gives judges quick run + deploy instructions.
-
----
 
 ```markdown
 # 💙 Devpathy — The Empathetic Code Reviewer
