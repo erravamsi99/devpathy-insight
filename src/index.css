@@ -2,41 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Devpathy Design System - Modern developer tool aesthetic with empathetic colors */
 
 @layer base {
   :root {
+    /* Background & surface colors */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    --surface: 0 0% 98%;
+    --surface-hover: 0 0% 96%;
 
+    /* Card & container colors */
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
+    /* Interactive elements */
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary brand colors - professional blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
+    --primary-light: 217 91% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary colors - warm purple for empathy */
+    --secondary: 262 52% 47%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 262 52% 42%;
+    --secondary-light: 262 52% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted colors */
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 8.9% 46.1%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent colors - warm orange for highlights */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 25 95% 48%;
+    --accent-light: 25 95% 95%;
 
+    /* Status colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Border & input colors */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
+    /* Code syntax highlighting */
+    --code-bg: 220 13% 97%;
+    --code-border: 220 13% 90%;
+    --syntax-keyword: 262 52% 47%;
+    --syntax-string: 142 76% 36%;
+    --syntax-number: 25 95% 53%;
+    --syntax-comment: 220 8.9% 46.1%;
+
+    /* Layout */
+    --radius: 0.75rem;
+    --header-height: 4rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +85,62 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme background & surfaces */
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --surface: 224 71% 6%;
+    --surface-hover: 224 71% 8%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Dark theme cards */
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Dark theme interactive */
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Dark theme primary - brighter blue */
+    --primary: 217 91% 65%;
+    --primary-foreground: 224 71% 4%;
+    --primary-hover: 217 91% 70%;
+    --primary-light: 217 91% 15%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Dark theme secondary - softer purple */
+    --secondary: 262 52% 55%;
+    --secondary-foreground: 224 71% 4%;
+    --secondary-hover: 262 52% 60%;
+    --secondary-light: 262 52% 15%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Dark theme muted */
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Dark theme accent - warmer orange */
+    --accent: 25 95% 58%;
+    --accent-foreground: 224 71% 4%;
+    --accent-hover: 25 95% 63%;
+    --accent-light: 25 95% 15%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Dark theme status */
+    --success: 142 76% 41%;
+    --success-foreground: 224 71% 4%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 224 71% 4%;
+    --destructive: 0 84.2% 65%;
+    --destructive-foreground: 224 71% 4%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Dark theme borders */
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 217 91% 65%;
+
+    /* Dark theme code */
+    --code-bg: 215 27.9% 12%;
+    --code-border: 215 27.9% 20%;
+    --syntax-keyword: 262 52% 65%;
+    --syntax-string: 142 76% 50%;
+    --syntax-number: 25 95% 65%;
+    --syntax-comment: 217.9 10.6% 54.9%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +158,42 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Custom surface styles */
+  .surface {
+    @apply bg-[hsl(var(--surface))] hover:bg-[hsl(var(--surface-hover))];
+  }
+  
+  /* Code block styles */
+  .code-block {
+    @apply bg-[hsl(var(--code-bg))] border border-[hsl(var(--code-border))] rounded-lg;
+  }
+  
+  /* Panel styles */
+  .panel {
+    @apply bg-card border border-border rounded-lg shadow-sm;
+  }
+  
+  /* Gradient backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+  }
+  
+  .gradient-secondary {
+    background: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-hover)));
+  }
+  
+  /* Animation utilities */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift {
+    @apply transition-smooth hover:shadow-lg hover:-translate-y-0.5;
   }
 }
