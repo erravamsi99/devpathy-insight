@@ -23,7 +23,8 @@ export const generateReport = async (data: FormData): Promise<ApiResponse> => {
 // Production API call (uncomment when backend is ready)
 export const generateReportFromAPI = async (data: FormData): Promise<ApiResponse> => {
   try {
-    const response = await fetch('/api/generate', {
+    const response = await fetch('/generate', {
+
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
