@@ -1,5 +1,3 @@
-
-```markdown
 # 💙 Devpathy — The Empathetic Code Reviewer
 
 **Theme:** Freedom from Mundane: AI for a Smarter Life  
@@ -23,7 +21,7 @@ It has **two modes**:
 ```
 
 Devpathy/
-├── backend/               # Python FastAPI backend
+├── Back\_end/              # Python FastAPI backend
 │   ├── main.py             # FastAPI entry point
 │   ├── devpathy/           # Core Python package
 │   │   ├── core.py
@@ -31,12 +29,13 @@ Devpathy/
 │   │   └── ...
 │   └── requirements.txt    # Backend dependencies
 │
-├── frontend/              # React + Tailwind frontend
-│   ├── package.json
-│   ├── src/
-│   └── ...
-│
-└── README.md              # This file
+├── public/                 # Frontend public assets
+├── src/                    # Frontend source code
+├── index.html              # Frontend HTML entry point
+├── package.json            # Frontend dependencies
+├── vite.config.ts          # Vite config
+├── tailwind.config.ts      # Tailwind config
+└── README.md               # This file
 
 ````
 
@@ -47,7 +46,7 @@ Devpathy/
 - 🔹 **Category-aware explanations** (performance, naming, pythonic, duplication, complexity, style).
 - 🔹 **Markdown-formatted reports** with code blocks.
 - 🔹 **Frontend UI** for pasting JSON and previewing reports.
-- 🔹 **Single-deploy ready** — serve frontend & backend together.
+- 🔹 **Hackathon-ready** — Works locally and with a live backend.
 
 ---
 
@@ -55,7 +54,7 @@ Devpathy/
 
 ### 1. Install dependencies
 ```bash
-cd backend
+cd Back_end
 python -m venv .venv
 .venv\Scripts\activate   # Windows
 # source .venv/bin/activate   # Mac/Linux
@@ -76,8 +75,7 @@ export OPENAI_API_KEY="your-key-here"
 ### 3. Run backend
 
 ```bash
-cd ..
-uvicorn backend.main:app --reload --port 8000
+uvicorn Back_end.main:app --reload --port 8000
 ```
 
 Visit: **[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)** for API docs.
@@ -89,15 +87,14 @@ Visit: **[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)** for API docs
 ### 1. Install dependencies
 
 ```bash
-cd frontend
 npm install
 ```
 
 ### 2. Update API URL
 
-In `src/api.js`, set the backend URL:
+In `src/api.ts`, set the backend URL:
 
-```js
+```ts
 const API_URL = "http://127.0.0.1:8000/generate";
 ```
 
@@ -113,23 +110,9 @@ Visit: **[http://localhost:5173](http://localhost:5173)**
 
 ## 🖇 Connecting Frontend & Backend Locally
 
-1. Start backend → `uvicorn backend.main:app --reload --port 8000`
+1. Start backend → `uvicorn Back_end.main:app --reload --port 8000`
 2. Start frontend → `npm run dev`
 3. Paste JSON payload in UI, click **Generate Report** → see Markdown output.
-
----
-
-## 🌐 Single Deploy (Frontend + Backend Together)
-
-1. Build frontend:
-
-```bash
-cd frontend
-npm run build
-```
-
-2. Copy `frontend/dist` into `backend/static` (or configure FastAPI to serve it).
-3. Deploy backend to Render/Railway — it will serve both UI and API at one URL.
 
 ---
 
@@ -137,12 +120,13 @@ npm run build
 
 ```json
 {
-  "code_snippet": "def get_active_users(users):\n    results = []\n    for u in users:\n        if u.is_active == True and u.profile_complete == True:\n            results.append(u)\n    return results",
+  "code_snippet": "def add(a,b): return a+b",
   "review_comments": [
-    "This is inefficient. Don't loop twice conceptually.",
-    "Variable 'u' is a bad name.",
-    "Boolean comparison '== True' is redundant."
-  ]
+    "Use better variable names",
+    "Missing type hints"
+  ],
+  "style": "friendly",
+  "links": true
 }
 ```
 
@@ -153,14 +137,13 @@ npm run build
 * **Functionality & Correctness (25%)** — Works both offline & with GPT.
 * **Quality of AI Output (45%)** — Empathetic, educational rewrites.
 * **Code Quality (20%)** — Clean, modular Python & React code.
-* **Innovation (10%)** — Severity-based tone, category-aware explanations, and single-deploy capability.
+* **Innovation (10%)** — Severity-based tone, category-aware explanations.
 
 ---
 
 ## 📚 Resources
 
 * [PEP 8 — Python Style Guide](https://peps.python.org/pep-0008/)
-* [Python List Comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
 * [FastAPI Documentation](https://fastapi.tiangolo.com/)
 * [Vite + React Docs](https://vitejs.dev/guide/)
 
@@ -168,8 +151,9 @@ npm run build
 
 ---
 
-I can now also give you a **FastAPI config** so that when you run `uvicorn backend.main:app` it will serve **both your React build and the `/generate` API** — meaning you’ll have just **one deploy URL** for the judges.  
+If you want, I can **add a section for deployment** that matches your exact structure so you can either:  
+- Deploy backend and frontend separately, or  
+- Serve frontend build from your `Back_end` FastAPI app for a single hackathon URL.  
 
-Do you want me to set up that unified deployment version? That will make your hackathon demo super smooth.
+Do you want me to add that deployment section now? That way your README covers both cases for the judges.
 ```
-
